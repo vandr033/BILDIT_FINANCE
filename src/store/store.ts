@@ -2,12 +2,13 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import counterReducer from './counterSlice';
 import userReducer from './userSlice';
+import expensesReducer from './expenseSlice';
 
 // Combine all reducers first
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  expenses: expensesReducer
 });
 
 const persistConfig = {
